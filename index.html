@@ -6,158 +6,50 @@
 <title>Youssef Ali - Expert Web Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
-  body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364, #6a11cb, #2575fc);
-    background-size: 400% 400%;
-    animation: gradientBG 25s ease infinite;
-    color: #fff;
-    line-height:1.6;
-    scroll-behavior: smooth;
-  }
-
-  /* Header */
-  header { text-align:center; padding:120px 20px; }
-  header h1 {
-    font-size:4rem;
-    margin-bottom:15px;
-    animation: jump 1.5s infinite alternate;
-    text-shadow: 2px 2px 10px #ffcc00;
-  }
-  header p { font-size:1.4rem; color:#ccc; margin-bottom:25px; opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards 0.5s; }
-  .btn {
-    display:inline-block;
-    padding:18px 40px;
-    color:#fff;
-    border:2px solid #fff;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.5s;
-    opacity:0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards 1s;
-    box-shadow: 0 0 10px rgba(255,255,255,0.5);
-  }
-  .btn:hover { 
-    background:#ffcc00;
-    color:#1f1c2c;
-    transform: translateY(-10px) scale(1.2) rotate(-2deg);
-    box-shadow: 0 0 25px #ffcc00;
-  }
-
-  /* Sections */
-  section { padding:100px 20px; max-width:1300px; margin:0 auto; }
-  h2 { font-size:3rem; text-align:center; margin-bottom:60px; border-bottom:3px solid #fff; display:inline-block; padding-bottom:15px; text-shadow: 1px 1px 5px #000; }
-
-  /* About */
-  #about p { max-width:1000px; margin:0 auto; text-align:center; font-size:1.3rem; opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards 0.5s; }
-
-  /* Skills */
-  ul.skills {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-    gap:25px;
-    list-style:none;
-    justify-items:center;
-    margin-top:50px;
-  }
-  ul.skills li {
-    background: rgba(255,255,255,0.2);
-    padding:20px 30px;
-    border-radius:25px;
-    font-weight:700;
-    transition:0.5s;
-    cursor:pointer;
-    text-align:center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-  ul.skills li:hover {
-    transform: translateY(-15px) scale(1.15) rotate(-1deg);
-    background: rgba(255,255,255,0.35);
-    box-shadow: 0 10px 25px rgba(255,204,0,0.5);
-  }
-
-  /* Projects */
-  .projects {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap:35px;
-    margin-top:50px;
-  }
-  .project {
-    background: rgba(255,255,255,0.1);
-    padding:30px;
-    border-radius:30px;
-    text-align:center;
-    transition:0.5s;
-    cursor:pointer;
-    opacity:0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  }
-  .project:hover {
-    transform: translateY(-20px) scale(1.1) rotate(-1deg);
-    background: rgba(255,255,255,0.25);
-    box-shadow: 0 20px 40px rgba(255,204,0,0.6);
-  }
-
-  /* Footer */
-  footer {
-    text-align:center;
-    padding:60px 20px;
-    background: rgba(0,0,0,0.4);
-    margin-top:50px;
-  }
-  footer a {
-    color:#fff;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.5s;
-    text-shadow: 0 0 5px #ffcc00;
-  }
-  footer a:hover { 
-    color:#ffcc00;
-    transform: scale(1.4) rotate(-2deg);
-    text-shadow: 0 0 15px #ffcc00;
-  }
-
-  /* Animations */
-  @keyframes jump { 0% {transform: translateY(0);} 100% {transform: translateY(-20px);} }
-  @keyframes fadeInUp { 0% {opacity:0; transform: translateY(20px);} 100% {opacity:1; transform: translateY(0);} }
-  @keyframes gradientBG {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
-  }
-
-  /* Responsive */
-  @media(max-width:768px){
-    header h1 { font-size:3rem; }
-    h2 { font-size:2.5rem; }
-    .btn { padding:12px 25px; }
-  }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif;}
+body{color:#fff;line-height:1.6;scroll-behavior:smooth;overflow-x:hidden;background:#0f0c29;}
+#particles-js{position:fixed;width:100%;height:100%;z-index:-1;top:0;left:0;}
+.reveal{opacity:0;transform: translateY(50px);transition: all 1s ease;}
+.reveal.active{opacity:1;transform: translateY(0);}
+header{text-align:center;padding:140px 20px;}
+header h1{font-size:4rem;margin-bottom:15px;text-shadow:0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #ff00ff,0 0 40px #ff00ff;animation: jump 1.5s infinite alternate;transition:text-shadow 1s;}
+header p{font-size:1.4rem;color:#ccc;margin-bottom:25px;text-shadow:0 0 3px #00ffff,0 0 5px #00ffff;}
+.btn{display:inline-block;padding:18px 40px;border:2px solid #ff00ff;border-radius:50px;text-decoration:none;font-weight:700;color:#ff00ff;text-shadow:0 0 5px #ff00ff,0 0 10px #ff00ff;transition:0.4s;box-shadow:0 0 10px #ff00ff;}
+.btn:hover{background:#ff00ff;color:#1f1c2c;transform: translateY(-10px) scale(1.2) rotate(-2deg);box-shadow:0 0 20px #ff00ff,0 0 40px #ff00ff;}
+section{padding:100px 20px;max-width:1300px;margin:0 auto;}
+h2{font-size:3rem;text-align:center;margin-bottom:60px;border-bottom:3px solid #ff00ff;display:inline-block;padding-bottom:15px;text-shadow:0 0 5px #ff00ff,0 0 10px #ff00ff;}
+#about p{max-width:1000px;margin:0 auto;text-align:center;font-size:1.3rem;}
+ul.skills{display:grid;grid-template-columns: repeat(auto-fit,minmax(160px,1fr));gap:25px;list-style:none;justify-items:center;margin-top:50px;}
+ul.skills li{background: rgba(255,0,255,0.1);padding:20px 30px;border-radius:25px;font-weight:700;transition:0.5s;cursor:pointer;text-align:center;box-shadow:0 0 10px #ff00ff;}
+ul.skills li:hover{transform: translateY(-15px) scale(1.15) rotate(-1deg);background: rgba(255,0,255,0.2);box-shadow:0 0 25px #ff00ff;}
+.projects{display:grid;grid-template-columns: repeat(auto-fit,minmax(280px,1fr));gap:35px;margin-top:50px;}
+.project{background: rgba(255,0,255,0.05);padding:30px;border-radius:30px;text-align:center;transition:0.5s;cursor:pointer;box-shadow:0 0 15px #ff00ff;transform-style: preserve-3d;}
+.project:hover{transform: translateY(-20px) scale(1.1) rotateY(15deg) rotateX(5deg);background: rgba(255,0,255,0.15);box-shadow:0 0 40px #ff00ff;}
+.project a{display:inline-block;margin-top:15px;text-decoration:none;padding:10px 20px;border-radius:25px;background:#ff00ff;color:#1f1c2c;font-weight:700;transition:0.3s;}
+.project a:hover{background:#fff;color:#1f1c2c;transform: scale(1.1);}
+footer{text-align:center;padding:60px 20px;margin-top:50px;}
+footer a{color:#ff00ff;margin:0 15px;text-decoration:none;font-weight:700;transition:0.5s;text-shadow:0 0 5px #ff00ff;}
+footer a:hover{color:#fff;transform: scale(1.4) rotate(-2deg);text-shadow:0 0 15px #ff00ff;}
+@keyframes jump{0%{transform: translateY(0);}100%{transform: translateY(-20px);}}
+@media(max-width:768px){header h1{font-size:3rem;}h2{font-size:2.5rem;}.btn{padding:12px 25px;}}
 </style>
 </head>
 <body>
 
-<!-- Header -->
-<header>
+<div id="particles-js"></div>
+
+<header class="reveal">
   <h1>Youssef Ali</h1>
   <p>Expert Web Developer | Django, Python, JavaScript</p>
   <a href="#projects" class="btn">My Projects</a>
 </header>
 
-<!-- About Section -->
-<section id="about">
+<section id="about" class="reveal">
   <h2>About Me</h2>
   <p>Hello! I'm <strong>Youssef Ali</strong>, a highly skilled Web Developer specializing in Python and Django. I build modern, interactive, and responsive web applications using cutting-edge technologies including JavaScript for dynamic frontend experiences.</p>
 </section>
 
-<!-- Skills Section -->
-<section id="skills">
+<section id="skills" class="reveal">
   <h2>Skills</h2>
   <ul class="skills">
     <li>Django</li>
@@ -169,32 +61,72 @@
   </ul>
 </section>
 
-<!-- Projects Section -->
-<section id="projects">
+<section id="projects" class="reveal">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="project" style="animation-delay:0.2s;">
+    <div class="project reveal" style="animation-delay:0.2s;">
       <h3>Project 1</h3>
-      <p>Professional Django web application.</p>
+      <p>My first amazing web project hosted on GitHub Pages.</p>
+      <a href="https://dfrt122330-alt.github.io/Project_1/" target="_blank">View Project</a>
     </div>
-    <div class="project" style="animation-delay:0.4s;">
-      <h3>Project 2</h3>
-      <p>Interactive JavaScript web experience.</p>
+    <div class="project reveal" style="animation-delay:0.4s;">
+      <h3>Portfolio Website</h3>
+      <p>My personal portfolio built with Django and Bootstrap.</p>
+      <a href="https://dfrt122330-alt.github.io/Portfolio" target="_blank">View Project</a>
     </div>
-    <div class="project" style="animation-delay:0.6s;">
-      <h3>Project 3</h3>
-      <p>Advanced Python backend API.</p>
+    <div class="project reveal" style="animation-delay:0.6s;">
+      <h3>Todo App</h3>
+      <p>Interactive JavaScript Todo application with local storage.</p>
+      <a href="https://dfrt122330-alt.github.io/Todo-App" target="_blank">View Project</a>
+    </div>
+    <div class="project reveal" style="animation-delay:0.8s;">
+      <h3>Blog API</h3>
+      <p>RESTful API built with Django REST Framework.</p>
+      <a href="https://github.com/dfrt122330-alt/BlogAPI" target="_blank">View Project</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
+<footer class="reveal">
   <p>Connect with me:</p>
   <a href="https://github.com/dfrt122330-alt" target="_blank">GitHub</a>
   <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
   <a href="https://www.facebook.com/profile.php?id=61552229587781" target="_blank">Facebook</a>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {"value":150,"density":{"enable":true,"value_area":800}},
+    "color":{"value":"#ff00ff"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.8,"random":true},
+    "size":{"value":4,"random":true},
+    "line_linked":{"enable":true,"distance":200,"color":"#ff00ff","opacity":0.4,"width":1},
+    "move":{"enable":true,"speed":6}
+  },
+  "interactivity":{
+    "detect_on":"canvas",
+    "events":{
+      "onhover":{"enable":true,"mode":"repulse"},
+      "onclick":{"enable":true,"mode":"push"}
+    },
+    "modes":{"repulse":{"distance":150},"push":{"particles_nb":6}}
+  },
+  "retina_detect":true
+});
+
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  for(let i=0;i<reveals.length;i++){
+    let windowHeight=window.innerHeight;
+    let revealTop=reveals[i].getBoundingClientRect().top;
+    let revealPoint=150;
+    if(revealTop<windowHeight-revealPoint){reveals[i].classList.add('active');}else{reveals[i].classList.remove('active');}
+  }
+});
+</script>
 
 </body>
 </html>
